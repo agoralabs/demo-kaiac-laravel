@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     apache2
 
+# Install mysql pdo
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install nodejs 16
 RUN curl -s https://deb.nodesource.com/setup_16.x | bash
@@ -51,5 +53,6 @@ RUN chmod 777 -R vendor \
     bootstrap
 
 RUN php artisan key:generate
+
 
 EXPOSE 80
