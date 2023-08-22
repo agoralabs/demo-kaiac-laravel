@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     apache2
 
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install nodejs 16
 RUN curl -s https://deb.nodesource.com/setup_16.x | bash

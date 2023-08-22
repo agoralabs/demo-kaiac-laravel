@@ -3,6 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
+      - chmod +x ./devops/buildspec.sh
       - ./devops/buildspec.sh
 artifacts:
   files:
