@@ -54,4 +54,4 @@ RUN chmod 777 -R vendor \
 RUN php artisan key:generate
 
 
-EXPOSE 80
+EXPOSE $TF_VAR_ENV_APP_BE_LOCAL_PORT

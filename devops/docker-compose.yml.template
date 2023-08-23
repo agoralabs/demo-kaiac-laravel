@@ -9,7 +9,7 @@ services:
         source: ${TF_VAR_ENV_APP_BE_LOCAL_SOURCE_FOLDER}/tmp
         target: /var/www/html/${TF_VAR_ENV_APP_GL_NAME}/tmp/
     ports:
-        - '${TF_VAR_ENV_APP_BE_LOCAL_PORT}:80'
+        - '${TF_VAR_ENV_APP_BE_LOCAL_PORT}:${TF_VAR_ENV_APP_BE_LOCAL_PORT}'
     networks:
       - kaiac
 networks:
