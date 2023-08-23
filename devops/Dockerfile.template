@@ -5,22 +5,21 @@ USER root
 # Set working directory
 WORKDIR /var/www/html/$TF_VAR_ENV_APP_GL_NAME
 
-# Install dependencies
+	# Install dependencies
 RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libzip-dev \
     zip \
     unzip \
-    ruby-full \
-    wget \
-    unzip \
-    software-properties-common \
-    curl \
-    apache2
-
-<<<<<<< HEAD
-=======
-# Install mysql pdo
->>>>>>> 13d2eb88b50cad6ac10e69ef63b92b21450709f0
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+    git \
+    && docker-php-ext-install -j$(nproc) iconv \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-install zip
 
 # Install nodejs 16
 RUN curl -s https://deb.nodesource.com/setup_16.x | bash
@@ -29,10 +28,7 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
     npm 
 
-# Enable mod rewrite
-RUN a2enmod rewrite
-
-# Install composer
+# Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copy code to /var/www/html/$TF_VAR_ENV_APP_GL_NAME
@@ -47,7 +43,7 @@ RUN cp ./000-default.conf /etc/apache2/sites-available/000-default.conf ; \
 #RUN cp ./php.ini /etc/php/8.1/apache2/php.ini
 
 
-# Deployment steps
+# Install Laravel
 RUN composer install --optimize-autoloader --no-dev
 RUN npm install
 
