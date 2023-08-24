@@ -188,37 +188,37 @@ class UserSeeder extends Seeder
             'updated_at' => now()
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 1,
             'job_role_id' => 1
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 2,
             'job_role_id' => 2
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 3,
             'job_role_id' => 3
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 4,
             'job_role_id' => 5
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 5,
             'job_role_id' => 5
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 6,
             'job_role_id' => 6
         ]);
 
-        DB::table('users_job_roles')->insert([
+        DB::table('user_job_roles')->insert([
             'user_id' => 7,
             'job_role_id' => 7
         ]);
