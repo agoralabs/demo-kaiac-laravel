@@ -100,5 +100,50 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        //Tasks
+        DB::table('tasks')->insert([
+            'user_id' => 1,
+            'name' => 'IMDB',
+            'priority' => 2,
+            'status' => 'overdue',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            'scheduled_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('tasks')->insert([
+            'user_id' => 2,
+            'name' => 'Frontend',
+            'priority' => 2,
+            'status' => 'ongoing',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            'scheduled_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('tasks')->insert([
+            'user_id' => 3,
+            'name' => 'Backend',
+            'priority' => 2,
+            'status' => 'completed',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            'scheduled_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('tasks')->insert([
+            'user_id' => 4,
+            'name' => 'Database',
+            'priority' => 2,
+            'status' => 'ongoing',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            'scheduled_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }
