@@ -58,17 +58,6 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Dorine',
-            'lastname' => 'Michou',
-            'email' => 'dorine.michou@agoralabs.org',
-            'avatar' => '/team-member-3.jpg',
-            'password' => Hash::make('password'),
-            'email_verified_at' => now(),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        DB::table('users')->insert([
             'name' => 'Wesley',
             'lastname' => 'Weezy',
             'email' => 'wesley.weezy@agoralabs.org',
