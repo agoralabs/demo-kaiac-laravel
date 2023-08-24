@@ -145,5 +145,82 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Team Lead',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Frontend Developer',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Backend Developer',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Database Admin',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Full Stack Developer',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Sys Admin',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('job_roles')->insert([
+            'name' => 'Product Owner',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 1,
+            'job_role_id' => 1
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 2,
+            'job_role_id' => 2
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 3,
+            'job_role_id' => 3
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 4,
+            'job_role_id' => 5
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 5,
+            'job_role_id' => 5
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 6,
+            'job_role_id' => 6
+        ]);
+
+        DB::table('users_job_roles')->insert([
+            'user_id' => 7,
+            'job_role_id' => 7
+        ]);
     }
 }
