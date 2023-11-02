@@ -10,7 +10,7 @@
         ServerName $TF_VAR_ENV_APP_BE_DOMAIN_NAME
 
         ServerAdmin webmaster@localhost
-        ServerAlias www.$TF_VAR_ENV_APP_BE_DOMAIN_NAME
+        ServerAlias $TF_VAR_ENV_APP_BE_DOMAIN_NAME
         DocumentRoot /var/www/html/$TF_VAR_ENV_APP_GL_NAME/public/
 
         # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
