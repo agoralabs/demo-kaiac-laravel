@@ -9,9 +9,9 @@ then
 
     cd /var/www/html/$TF_VAR_ENV_APP_GL_NAME
 
-    aws ecr get-login-password --region $TF_VAR_ENV_APP_GL_AWS_REGION | docker login --username AWS --password-stdin $TF_VAR_ENV_APP_GL_AWS_ACCOUNT_ID.dkr.ecr.$TF_VAR_ENV_APP_GL_AWS_REGION.amazonaws.com
+    aws ecr get-login-password --region $TF_VAR_ENV_APP_GL_AWS_REGION | docker login --username AWS --password-stdin $TF_VAR_ENV_APP_GL_DOCKER_REPOSITORY
 
-    docker build -t $TF_VAR_ENV_APP_GL_NAME:$TF_VAR_ENV_APP_BE_NAMESPACE'_'$TF_VAR_ENV_APP_GL_NAME .
+    docker build -t $TF_VAR_ENV_APP_GL_NAME:$TF_VAR_ENV_APP_GL_NAMESPACE'_'$TF_VAR_ENV_APP_GL_STAGE .
 
     docker compose -f ./docker-compose.yml up -d
 
@@ -29,9 +29,7 @@ else
 
     sudo cp 000-default.conf /etc/apache2/sites-available/000-$TF_VAR_ENV_APP_GL_NAME.conf
     sudo cp dir.conf /etc/apache2/mods-enabled/dir.conf
-    #sudo cp apache2.conf /etc/apache2/apache2.conf
     sudo cp ports.conf /etc/apache2/ports.conf
-    sudo cp php.ini /etc/php/8.1/apache2/php.ini
     sudo a2ensite 000-$TF_VAR_ENV_APP_GL_NAME.conf
     sudo a2dissite 000-default.conf
     sudo systemctl restart apache2
