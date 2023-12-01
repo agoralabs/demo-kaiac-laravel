@@ -3,8 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - chmod +x ./devops/buildspec.sh
-      - ./devops/buildspec.sh
+      - build_script_name="build_${TF_VAR_ENV_APP_GL_SCRIPT_MODE}.sh"
+      - echo "build_script_name=$build_script_name"
+      - chmod +x ./devops/$build_script_name
+      - ./devops/$build_script_name
 artifacts:
   files:
     - '**/*'

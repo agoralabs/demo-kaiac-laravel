@@ -1,5 +1,8 @@
 #!/bin/bash
 
+THE_DATE=$(date '+%Y-%m-%d %H:%M:%S')
+echo "Build started on $THE_DATE"
+
 appenvsubstr(){
     p_template=$1
     p_destination=$2
@@ -30,7 +33,10 @@ appenvsubstr devops/ports.conf.template ports.conf
 appenvsubstr devops/dir.conf.template dir.conf
 appenvsubstr devops/appspec.yml.template appspec.yml
 appenvsubstr devops/.env.example.template .env
-appenvsubstr devops/appspec.sh.template devops/appspec.sh
+appenvsubstr devops/appspec_clouddocker.sh.template devops/appspec.sh
 appenvsubstr devops/Dockerfile.template Dockerfile
 appenvsubstr devops/docker-compose.yml.template docker-compose.yml
 chmod 777 devops/appspec.sh
+
+THE_DATE_END=$(date '+%Y-%m-%d %H:%M:%S')
+echo "Build ended on $THE_DATE_END"

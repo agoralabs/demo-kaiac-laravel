@@ -37,7 +37,7 @@ appenvsubstr devops/ports.conf.template ports.conf
 appenvsubstr devops/dir.conf.template dir.conf
 appenvsubstr devops/appspec.yml.template appspec.yml
 appenvsubstr devops/.env.example.template .env
-appenvsubstr devops/appspec.sh.template devops/appspec.sh
+appenvsubstr devops/appspec_cloudeks.sh.template devops/appspec.sh
 appenvsubstr devops/Dockerfile.template Dockerfile
 appenvsubstr devops/laravel-kubernetes.yaml.template laravel-kubernetes.yaml
 appenvsubstr devops/laravel-service.yaml.template laravel-service.yaml
@@ -70,3 +70,6 @@ kubectl apply -f laravel-kubernetes.yaml -n ${TF_VAR_ENV_APP_BE_KUBERNETES_NAMES
 
 echo "Trying kubectl apply -f laravel-service.yaml..."
 kubectl apply -f laravel-service.yaml -n ${TF_VAR_ENV_APP_BE_KUBERNETES_NAMESPACE}
+
+THE_DATE_END=$(date '+%Y-%m-%d %H:%M:%S')
+echo "Build ended on $THE_DATE_END"
