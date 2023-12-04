@@ -3,6 +3,8 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/$TF_VAR_ENV_APP_GL_NAME
+    overwrite: true
+    file_exists_behavior: OVERWRITE
 hooks:
   AfterInstall:
     - location: devops/appspec.sh
